@@ -45,3 +45,6 @@ let x=document.getElementById("demo");
           break;
         }
       }
+
+
+      setInterval(getLocation(), 1000);
