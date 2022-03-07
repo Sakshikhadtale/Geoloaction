@@ -10,3 +10,6 @@ div.container{
     opacity: 1;
     transition: opacity 3s;
 }
+.blue{
+    color:#14bd2a;
+}

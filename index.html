@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyCyCMYITNqunwUBE_eRazzkYziiQUd0LEM"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="custom.css">
     <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/b7ea3ffe66.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="getLocation()">
-  <h2 class= "text-center my-2 mt-4 bebas font-weight-bold fadein">Locate My Position</h2>
-    <div class="text-center shadowbox container map my-2"id="mapholder" >
-              </div>     
-    </body>
+  <h2 class= "text-center mt-4 bebas font-weight-bold fadein">Locate My Position <i class="fa-solid fa-map-location-dot blue"></i></h2>
+    <div class="text-center shadowbox container map"id="mapholder" >
+    </div>  
+<iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/sakshiii/cl0gd13jk004j14p345purmje.html?title=false&access_token=pk.eyJ1Ijoic2Frc2hpaWkiLCJhIjoiY2wwZ2N5aTdqMTFmbzNrbXpwb2thNDRzbyJ9.tKoXQDgTsj_HhSRBIARTgA&zoomwheel=false#12/48.8665/2.3176" title="Basc" style="border:none;"></iframe>
+</body>
 </html>
