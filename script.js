@@ -56,4 +56,4 @@ let x=document.getElementById("demo");
       }
 
 
-      setInterval(getLocation(), 1000);
+      // setInterval(getLocation(), 1000);
