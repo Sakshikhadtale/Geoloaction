@@ -9,6 +9,7 @@ function getLocation() {
 }
 const image = `./assets/img/truck.png`;
 let map ;
+let marker ;
 
 function showPosition(position) {
 
@@ -29,7 +30,6 @@ function showPosition(position) {
     mapTypeControl: false,
     navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
   };
-  let marker ;
   marker = new google.maps.Marker({
     position: latlon, map: map, title: "You are here!", icon: image
   });
