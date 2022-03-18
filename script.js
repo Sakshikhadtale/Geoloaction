@@ -30,14 +30,15 @@ function showPosition(position) {
     mapTypeControl: false,
     navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
   };
-  marker = new google.maps.Marker({
-    position: latlon, map: map, title: "You are here!", icon: image
-  });
+
   if(mapholder.innerHTML===''){
+
   map = new google.maps.Map(mapholder, myOptions);
 
 }else{
-
+  marker = new google.maps.Marker({
+    position: latlon, map: map, title: "You are here!", icon: image
+  });
 
   if (lat==marker.getPosition().lat()&&lon==marker.getPosition().lng())
   {
@@ -60,18 +61,26 @@ function showError(error) {
     case error.PERMISSION_DENIED:
 
       x.innerHTML = "User denied the request for Geolocation."
+      alert(x.innerHTML);
+
       break;
     case error.POSITION_UNAVAILABLE:
       x.innerHTML = "Location information is unavailable."
+      alert(x.innerHTML);
+
       break;
     case error.TIMEOUT:
       x.innerHTML = "The request to get user location timed out."
+      alert(x.innerHTML);
+
       break;
     case error.UNKNOWN_ERROR:
       x.innerHTML = "An unknown error occurred."
+      alert(x.innerHTML);
+
       break;
   }
-  alert(x.innerHTML);
+  // alert(x.innerHTML);
 
 }
 
