@@ -30,18 +30,27 @@ function showPosition(position) {
     navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
   };
   let marker ;
+  marker = new google.maps.Marker({
+    position: latlon, map: map, title: "You are here!", icon: image
+  });
   if(mapholder.innerHTML===''){
   map = new google.maps.Map(mapholder, myOptions);
-  marker = new google.maps.Marker({
-    position: latlon, map: map, title: "You are here!", icon: image
-  });
+
 }else{
+
+
+  if (lat!=marker.getPosition().lat()&&lon!=marker.getPosition().lng())
+  {
+    console.log("not same coords  updating ")
+  }
+  else
+  {
+    console.log("updating cords")
   myLatlng = new google.maps.LatLng(lat,lon);
-  marker = new google.maps.Marker({
-    position: latlon, map: map, title: "You are here!", icon: image
-  });
+
   marker.setPosition(myLatlng);
   map.setCenter(myLatlng);
+}
 }
 }
 
