@@ -39,9 +39,9 @@ function showPosition(position) {
 }else{
 
 
-  if (lat!=marker.getPosition().lat()&&lon!=marker.getPosition().lng())
+  if (lat==marker.getPosition().lat()&&lon==marker.getPosition().lng())
   {
-    console.log("not same coords  updating ")
+    console.log(" same coords not updating ")
   }
   else
   {
