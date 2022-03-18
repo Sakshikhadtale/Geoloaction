@@ -7,13 +7,15 @@ function getLocation() {
   }
   else { x.innerHTML = "Geolocation is not supported by this browser."; }
 }
+const image = `./assets/img/truck.png`;
+let map ;
+
 function showPosition(position) {
 
 
 
 
 
-  const image = `./assets/img/truck.png`;
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let latlon = new google.maps.LatLng(lat, lon)
@@ -27,14 +29,24 @@ function showPosition(position) {
     mapTypeControl: false,
     navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
   };
-  let map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
-  let marker = new google.maps.Marker({
+  let marker ;
+  if(mapholder.innerHTML===''){
+  map = new google.maps.Map(mapholder, myOptions);
+  marker = new google.maps.Marker({
     position: latlon, map: map, title: "You are here!", icon: image
   });
+}else{
+  myLatlng = new google.maps.LatLng(lat,lon);
+  marker = new google.maps.Marker({
+    position: latlon, map: map, title: "You are here!", icon: image
+  });
+  marker.setPosition(myLatlng);
+  map.setCenter(myLatlng);
+}
 }
 
 function showError(error) {
-  alert("Please give location permission or Turn on location");
+  // alert(x.innerHTML);
   switch (error.code) {
     case error.PERMISSION_DENIED:
 
@@ -50,6 +62,8 @@ function showError(error) {
       x.innerHTML = "An unknown error occurred."
       break;
   }
+  alert(x.innerHTML);
+
 }
 
 
