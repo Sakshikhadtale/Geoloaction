@@ -46,6 +46,7 @@ function showPosition(position) {
   }
   else
   {
+    marker.setMap(null);
     console.log("updating cords")
   myLatlng = new google.maps.LatLng(lat,lon);
 
